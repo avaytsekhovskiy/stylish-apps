@@ -164,6 +164,44 @@
                 <h3>Основные атрибуты</h3>
                 <img width="50%" src="src/img/background.png">
             </section>
+            <section>
+                <h3>Основные атрибуты</h3>
+                <dl class="medium">
+                    <dt>colorPrimary</dt>
+                    <dd>Цвет заголовков</dd>
+                    <dt>colorPrimaryDark</dt>
+                    <dd>Цвет status bar</dd>
+                    <dt>colorAccent</dt>
+                    <dd>Цвет </dd>
+                    <dt>colorControlNormal</dt>
+                    <dd></dd>
+                    <dt>colorButtonNormal</dt>
+                    <dd>Фон кнопок</dd>
+                </dl>
+            </section>
+            <section>
+                <pre><code class="xml" data-trim contenteditable>
+&lt;item name="android:textColor">?ohmyCsSecondaryDisabledNatural&lt;/item>
+&lt;item name="android:editTextColor">?ohmyCsSecondaryDisabledNatural&lt;/item>
+&lt;item name="android:textColorPrimaryDisableOnly">?ohmyCsSecondaryDisabledNatural&lt;/item> это свитч
+
+&lt;item name="android:disabledAlpha">0.5&lt;/item>
+&lt;item name="textColorDefaultDisabled">?android:textColorSecondary&lt;/item> - это цвет
+
+/* EXTENSION */
+&lt;item name="android:textColorPrimary">?colorPrimaryDark&lt;/item>
+&lt;item name="android:textColorPrimaryInverse">?colorPrimaryLight&lt;/item>
+&lt;item name="android:textColorSecondary">@color/black&lt;/item>
+&lt;item name="android:textColorSecondaryInverse">@color/white&lt;/item>
+&lt;item name="android:textColorTertiary">@color/grey_dark&lt;/item>
+&lt;item name="android:textColorTertiaryInverse">@color/grey_light&lt;/item>
+
+&lt;item name="textColorError">@color/red_dark&lt;/item>
+&lt;item name="android:textColorHint">?ohmyCsTertiaryDisabledNatural&lt;/item>
+&lt;item name="android:textColorHighlight">?colorPrimary a bit transparent&lt;/item>
+&lt;item name="android:textColorLink">?ohmyCsAccentDisabledNatural&lt;/item>
+                </code></pre>
+            </section>
         </section>
         <section>
             <section><h2>Правила</h2></section>
