@@ -1,49 +1,206 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Stylish Apps</title>
+    <title>Stylish Apps</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/night.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1 style="color: lawngreen">Stylish Apps</h1>
+            <img src="">
+        </section>
+        <section>
+            <section><h2>Инструменты</h2></section>
+            <section>
+                <h3>AppCompat Library</h3>
+            </section>
+            <section>
+                <h3>Resources</h3>
+                <ul>
+                    <li>colors.xml</li>
+                    <li>drawables.xml</li>
+                    <li>styles.xml
+                        <span class="fragment" data-fragment-index="1" style="color: whitesmoke;">
+                            / <span style="color: lightgrey;">themes.xml</span>
+                        </span>
+                    </li>
+                    <li>attrs.xml</li>
+                </ul>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                <br><br>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+                <dl class="fragment" data-fragment-index="2">
+                    <dt>Theme</dt>
+                    <dd class="fragment" data-fragment-index="3">набор <i>атрибутов</i></dd>
+                    <dt>Style</dt>
+                    <dd class="fragment" data-fragment-index="4"><i>значения</i> атрибутов</dd>
+                </dl>
+            </section>
+            <section>
+                <h3>Цветовые обозначения</h3>
+                <dl>
+                    <dt style="color: lightskyblue">Название атрибута</dt>
+                    <dt style="color: yellow">Название ресурса</dt>
+                    <dt style="color: orange">Название стиля или темы</dt>
+                    <dt style="color: red">Ключевой вопрос</dt>
+                </dl>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Styles</h2>
+                <img src="src/img/buttons%20-%20default.png" width="50%" class="fragment" data-fragment-index="1">
+                <p><span style="color: red">Q:</span> Как раскрасить кнопку?</p>
+            </section>
+            <section>
+                <h3>Параметры темы</h3>
+                <pre><code class="xml" data-trim contenteditable>
+<item name="android:buttonStyle">?style</item>
+<item name="android:borderlessButtonStyle">?style</item>
+                </code></pre>
+                <br>
+                <p  class="fragment" data-fragment-index="1">Все определяется в стиле</p>
+                <pre class="fragment" data-fragment-index="1"><code class="xml" data-trim contenteditable>
+                    &lt;item name="background"&gt;@drawable/btn_default_material&lt;/item&gt;
+                    &lt;item name="textAppearance"&gt;?attr/textAppearanceButton&lt;/item&gt;
+                    &lt;item name="minHeight"&gt;48dip&lt;/item&gt;
+                    &lt;item name="minWidth"&gt;88dip&lt;/item&gt;
+                    &lt;item name="stateListAnimator"&gt;@anim/button_state_list_anim_material&lt;/item&gt;
+                    &lt;item name="focusable"&gt;true&lt;/item&gt;
+                    &lt;item name="clickable"&gt;true&lt;/item&gt;
+                    &lt;item name="gravity"&gt;center_vertical|center_horizontal&lt;/item&gt;
+                </code></pre>
+            </section>
+            <section>
+                <h3>Параметры темы</h3>
+                <pre><code class="xml" data-trim contenteditable>
+<item name="android:buttonStyle">?style</item>
+<item name="android:borderlessButtonStyle">?style</item>
+                </code></pre>
+                <br>
+                <div>
+                    <p>значения по-умолчанию</p>
+                    <ul>
+                        <li style="color: orange">Widget.AppCompat.Button</li>
+                        <li style="color: orange">Widget.AppCompat.Button.Borderless</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3>Параметры темы</h3>
+                <br>
+                <pre><code class="xml" data-trim contenteditable>
+                        <item name="colorButtonNormal">?color_selector</item>
+                </code></pre>
+            </section>
+            <section>
+                <h3>Параметры темы</h3>
+                <span style="color: darkgrey">(deep inside)</span>
+
+                <br>
+                <br>
+
+                <span style="color: orange">Widget.AppCompat.Button</span><span class="fragment" data-fragment-index="1"> &darr;</span><br>
+                <span class="fragment" data-fragment-index="1" style="color: orange">Base.Widget.AppCompat.Button</span><span class="fragment" data-fragment-index="2"> &darr;</span><br>
+                <span class="fragment" data-fragment-index="2" style="color: orange">Widget.Material.Button</span><span class="fragment" data-fragment-index="3"> &darr;</span><br>
+                <span class="fragment" data-fragment-index="3"><span style="color: lightskyblue">background</span>: <span style="color:yellow">@drawable/btn_default_material</span><span class="fragment" data-fragment-index="4"> &darr;</span></span>
+                <pre class="fragment" data-fragment-index="4"><code class="xml" data-trim contenteditable>
+&lt;ripple android:color="?attr/colorControlHighlight"&gt;
+  &lt;item&gt;
+    &lt;nine-patch
+            android:src="@drawable/btn_mtrl_alpha"
+            android:tint="?attr/colorButtonNormal"&gt;
+    &lt;/nine-patch&gt;
+  &lt;/item&gt;
+&lt;/ripple&gt;
+                </code></pre>
+            </section>
+            <section>
+                <blockquote>Стили <strong>должны</strong> ссылаться на атрибуты темы</blockquote>
+
+                <br>
+
+                <dl>
+                    <dt class="fragment" data-fragment-index="1"><span style="color: red">Q:</span> Как раскрасить кнопку?</dt>
+                    <dd class="fragment" data-fragment-index="2">Изменить атрибут <i><span style="color: lightskyblue">colorButtonNormal</span></i></dd>
+                </dl>
+            </section>
+        </section>
+        <section>
+            <section><h2>Theme</h2></section>
+            <section>
+                <h3>Основные атрибуты</h3>
+                <dl>
+                    <dd></dd>
+                </dl>
+            </section>
+        </section>
+        <section>
+            <section><h2>Правила</h2></section>
+            <section>
+                <h3>Как настроить базовую тему</h3>
+                <ul>
+                    <li>Атрибуты вместо цветов</li>
+                    <li>Расширить специфичными атрибутами</li>
+                    <li>Настроить селекторы</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Как создавать разные темы</h3>
+                <ul>
+                    <li>Базовую тема <span>(с кастомными атрибутами)</span></li>
+                    <li>Специфичные темы (переопределить ключевое)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Как создавать стили</h3>
+                <ul>
+                    <li>Не смешивать стиль и верстку</li>
+                    <li>Использовать наследование</li>
+                </ul>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
 </html>
