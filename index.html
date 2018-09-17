@@ -24,11 +24,11 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section>
+        <section id="splash">
             <h1 style="color: lawngreen">Stylish Apps</h1>
-            <img src="">
+            <img data-src="">
         </section>
-        <section>
+        <section id="overview">
             <section><h2>Инструменты</h2></section>
             <section>
                 <h3>AppCompat Library</h3>
@@ -48,11 +48,13 @@
 
                 <br><br>
 
-                <dl class="fragment" data-fragment-index="2">
+                <dl class="fragment medium" data-fragment-index="2">
                     <dt>Theme</dt>
-                    <dd class="fragment" data-fragment-index="3">набор <i>атрибутов</i></dd>
+                    <dd class="fragment" data-fragment-index="3">объявление/регистрация атрибутов</dd>
                     <dt>Style</dt>
-                    <dd class="fragment" data-fragment-index="4"><i>значения</i> атрибутов</dd>
+                    <dd class="fragment" data-fragment-index="4">значения атрибутов</dd>
+                    <dt class="fragment" data-fragment-index="5" style="color: yellow">Theme Overlay</dt>
+                    <dd class="fragment" data-fragment-index="6" style="color: lightyellow">Override поднабора атрибутов основной темы</dd>
                 </dl>
             </section>
             <section>
@@ -65,11 +67,11 @@
                 </dl>
             </section>
         </section>
-        <section>
+        <section id="style">
             <section>
                 <h2>Styles</h2>
-                <img src="src/img/buttons%20-%20default.png" width="50%" class="fragment" data-fragment-index="1">
-                <p><span style="color: red">Q:</span> Как раскрасить кнопку?</p>
+                <img data-src="src/img/buttons%20-%20default.png" width="50%" class="fragment" data-fragment-index="1">
+                <p class="fragment" data-fragment-index="2"><span style="color: red">Q:</span> Как раскрасить кнопку?</p>
             </section>
             <section>
                 <h3>Параметры темы</h3>
@@ -150,61 +152,256 @@
             <section>
                 <h3>Основные атрибуты</h3>
                 <dl class="medium">
-                    <dt style="color: lightskyblue">android:windowLightStatusBar</dt>
-                    <dd>Цвет иконок (светлый/темный)</dd>
-                    <dt style="color: lightskyblue">android:windowBackground</dt>
-                    <dd>Фон главного окна</dd>
-                    <dt style="color: lightskyblue">android:colorBackground</dt>
-                    <dd>Фон всего (алерты, активити)</dd>
-                    <dt style="color: lightskyblue">android:colorForeground</dt>
-                    <dd>?? противоположный цвет ??</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey;">android:</span>windowLightStatusBar</dt>
+                    <dd class="fragment" data-fragment-index="1">Цвет иконок (светлый/темный)</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey;">android:</span>windowBackground</dt>
+                    <dd class="fragment" data-fragment-index="2">Фон главного окна</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey;">android:</span>colorBackground</dt>
+                    <dd class="fragment" data-fragment-index="2">Фон всего (алерты, активити)</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey;">android:</span>colorForeground</dt>
+                    <dd class="fragment" data-fragment-index="3">?? противоположный цвет ??</dd>
                 </dl>
             </section>
             <section>
                 <h3>Основные атрибуты</h3>
-                <img width="50%" src="src/img/background.png">
+                <img width="50%" data-src="src/img/background.png">
             </section>
             <section>
-                <h3>Основные атрибуты</h3>
+                <h4>Основные атрибуты - цвета</h4>
                 <dl class="medium">
-                    <dt>colorPrimary</dt>
-                    <dd>Цвет заголовков</dd>
-                    <dt>colorPrimaryDark</dt>
-                    <dd>Цвет status bar</dd>
-                    <dt>colorAccent</dt>
-                    <dd>Цвет </dd>
-                    <dt>colorControlNormal</dt>
-                    <dd></dd>
-                    <dt>colorButtonNormal</dt>
-                    <dd>Фон кнопок</dd>
+                    <dt style="color: lightskyblue">colorPrimary</dt>
+                    <dd class="fragment" data-fragment-index="1">Цвет заголовков</dd>
+                    <dt style="color: lightskyblue">colorPrimaryDark</dt>
+                    <dd class="fragment" data-fragment-index="1">Фон status bar</dd>
+                    <dt style="color: lightskyblue">colorAccent</dt>
+                    <dd  class="fragment" data-fragment-index="2">Цвет интерактивных элементов<span style="color: red">*</span></dd>
+                </dl>
+                <br>
+                <div class="fragment" data-fragment-index="3">
+                    <p class="medium">*Зависимые по-умолчанию от <span style="color: lightskyblue">colorAccent</span></p>
+                    <dl class="medium">
+                        <dt style="color: lightskyblue">colorControlNormal</dt>
+                        <dd class="fragment" data-fragment-index="4">Off</dd>
+                        <dt style="color: lightskyblue">colorControlActivated</dt>
+                        <dd class="fragment" data-fragment-index="4">On</dd>
+                        <dt style="color: lightskyblue">colorControlHighlight</dt>
+                        <dd class="fragment" data-fragment-index="5">Подсветка при нажатии <span style="color: red">(ripple!)</span></dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <h4><span style="color: orange">colorAccent</span></h4>
+                <span class="fragment fade-out" data-fragment-index="1"><span style="color: grey">N</span>, <span style="color: grey">A</span>, <span style="color: grey">H</span></span>
+                <span style="display: inline-block; width: 10rem"></span>
+                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
+                <span style="display: inline-block; width: 10rem"></span>
+                <span class="fragment fade-out" data-fragment-index="1"><span style="color: orange">N</span>, <span style="color: darkorange">A</span>, <span style="color: darkorange">H</span></span>
+                <br>
+                <video class="fragment fade-out" data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20plain.mp4" type="video/mp4"/></video>
+                <video controls><source data-src="src/img/overlay%20-%20regular.mp4" type="video/mp4"/></video>
+                <video class="fragment fade-out" data-fragment-index="1"  controls><source data-src="src/img/overlay%20-%20colorful.mp4" type="video/mp4"/></video>
+            </section>
+            <section>
+                <h4><span style="color: orange">colorAccent - проблемы</span></h4>
+                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
+                <br>
+                <br>
+                <video data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20regular%20(problems).mp4" type="video/mp4"/></video>
+                <span style="display: inline-block; width: 10rem"></span>
+                <video data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20colorful%20(problems).mp4" type="video/mp4"/></video>
+            </section>
+            <section>
+                <h4>Основные атрибуты - текст</h4>
+                <dl class="medium">
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorPrimary</dt>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorPrimaryInverse</dt>
+                    <dd class="fragment" data-fragment-index="2">Цвет заголовка <span style="color: lightskyblue; background: darkgrey">colorPrimary</span> по-умолчанию</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorSecondary</dt>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorSecondaryInverse</dt>
+                    <dd class="fragment" data-fragment-index="1">Цвет обычного текста - <span style="background: darkgrey"><span style="color: black">Ч</span>/<span style="color: white">Б</span></span> по-умолчанию</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorTertiary</dt>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorTertiaryInverse</dt>
+                    <dd class="fragment" data-fragment-index="3">Цвет хинтов - <span><span style="color: lightgrey">светло</span>-<span style="color: darkgrey">темно серый </span></span></dd>
+                    <dt style="color: lightskyblue">textColorError</dt>
+                    <dd class="fragment" data-fragment-index="4">Цвет ошибки - <span style="color: red">красный</span></dd>
                 </dl>
             </section>
             <section>
-                <pre><code class="xml" data-trim contenteditable>
-&lt;item name="android:textColor">?ohmyCsSecondaryDisabledNatural&lt;/item>
-&lt;item name="android:editTextColor">?ohmyCsSecondaryDisabledNatural&lt;/item>
-&lt;item name="android:textColorPrimaryDisableOnly">?ohmyCsSecondaryDisabledNatural&lt;/item> это свитч
+                <h4>Основные компоненты - селекторы</h4>
+                <dl class="medium">
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColor</dt>
+                    <dd class="fragment" data-fragment-index="1">read only</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>editTextColor</dt>
+                    <dd class="fragment" data-fragment-index="1">editable</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorHint</dt>
+                    <dd class="fragment" data-fragment-index="1">подсказки</dd>
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorLink</dt>
+                    <dd class="fragment" data-fragment-index="1">ссылки</dd>
+                </dl>
+                <br>
+                <div class="fragment" data-fragment-index="2">
+                    <p class="medium">редкие</p>
+                    <br>
+                    <dl class="medium">
+                        <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorHighlight</dt>
+                        <dd class="fragment" data-fragment-index="3"><span style="background: darkorange">фон выделенного текста</span></dd>
+                        <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorPrimaryDisableOnly</dt>
+                        <dd class="fragment" data-fragment-index="4">фон Off Switch кнопки</dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <h4>Основные компоненты - disabled</h4>
+                <dl class="medium">
+                    <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>disabledAlpha</dt>
+                    <dd class="fragment" data-fragment-index="1">[0; 1] прозрачность</dd>
+                </dl>
+                <p class="fragment medium" data-fragment-index="2"><span style="color: red">Q:</span> Безопасно ли делать элементы прозрачными?</p>
+                <p class="fragment medium" data-fragment-index="3">Нет! Лучше явно определить цвет в селекторе элемента</p>
 
-&lt;item name="android:disabledAlpha">0.5&lt;/item>
-&lt;item name="textColorDefaultDisabled">?android:textColorSecondary&lt;/item> - это цвет
+                <br>
+                <br>
 
-/* EXTENSION */
-&lt;item name="android:textColorPrimary">?colorPrimaryDark&lt;/item>
-&lt;item name="android:textColorPrimaryInverse">?colorPrimaryLight&lt;/item>
-&lt;item name="android:textColorSecondary">@color/black&lt;/item>
-&lt;item name="android:textColorSecondaryInverse">@color/white&lt;/item>
-&lt;item name="android:textColorTertiary">@color/grey_dark&lt;/item>
-&lt;item name="android:textColorTertiaryInverse">@color/grey_light&lt;/item>
-
-&lt;item name="textColorError">@color/red_dark&lt;/item>
-&lt;item name="android:textColorHint">?ohmyCsTertiaryDisabledNatural&lt;/item>
-&lt;item name="android:textColorHighlight">?colorPrimary a bit transparent&lt;/item>
-&lt;item name="android:textColorLink">?ohmyCsAccentDisabledNatural&lt;/item>
-                </code></pre>
+                <blockquote class="fragment" data-fragment-index="4">Расширение темы своими атрибутами позволит сделать ее более гибкой!</blockquote>
             </section>
         </section>
-        <section>
-            <section><h2>Правила</h2></section>
+        <section id="custom">
+            <section><h2>Advanced техники</h2></section>
+            <section>
+                <h4>Кастомные атрибуты</h4>
+
+                <p>attrs.xml</p>
+                <pre class="fragment" data-fragment-index="4"><code class="xml" data-trim contenteditable>
+&lt;declare-styleable name="Base.AppTheme">
+    &lt;attr name="colorPrimaryLight" format="color|reference" />
+    &lt;attr name="textColorDisabledDefault" format="color|reference" />
+
+    &lt;attr name="ohmyButtonColorNormal" format="color|reference"/>
+    &lt;attr name="ohmyButtonColorDisabled" format="color|reference" />
+&lt;/declare-styleable>
+                </code></pre>
+            </section>
+            <section>
+                <h4>Кастомные атрибуты</h4>
+
+                <p class="medium">Дополнительные цвета</p>
+                <dl class="medium">
+                    <dt style="color: lightskyblue">colorPrimaryLight</dt>
+                    <dd class="fragment" data-fragment-index="1">Инверсный PrimaryDark, почему-то его нет</dd>
+                    <dt style="color: lightskyblue">textColorDisabledDefault</dt>
+                    <dt style="color: lightskyblue">ohmyButtonColorNormal</dt>
+                    <dt style="color: lightskyblue">ohmyButtonColorDisabled</dt>
+                    <dd class="fragment" data-fragment-index="2">Ожидамое поведение disabled</dd>
+                </dl>
+            </section>
+            <section>
+                <h4>Theme overlay</h4>
+
+                <blockquote>Theme, that overlay normal theme, overwriting relevant attributes</blockquote>
+
+                <p class="fragment medium" data-fragment-index="1">Используется для создания Light / Dark <span class="fragment" data-fragment-index="2">(и не только)</span></p>
+            </section>
+            <section>
+                <h4>Toolbar Theme overlay</h4>
+
+                <pre><code class="xml small-code" data-trim contenteditable>
+&lt;style name="Base.AppThemeOverlay.Toolbar" parent="ThemeOverlay.AppCompat">
+    &lt;item name="android:textColorSecondary">?android:textColorPrimary&lt;/item>
+    &lt;item name="android:textColorSecondaryInverse">?android:textColorPrimaryInverse&lt;/item>
+    &lt;item name="android:actionMenuTextColor">?android:textColorPrimary&lt;/item>
+    &lt;item name="android:icon">?android:textColorPrimary&lt;/item>
+    &lt;item name="colorControlNormal">?android:textColorPrimary&lt;/item>
+    &lt;item name="colorControlActivated">?android:textColorPrimary&lt;/item>
+&lt;/style>
+
+&lt;style name="Base.AppThemeOverlay.Toolbar.Light">
+    &lt;item name="android:textColorPrimary">@color/black&lt;/item>
+    &lt;item name="android:textColorPrimaryInverse">@color/white&lt;/item>
+&lt;/style>
+
+&lt;style name="Base.AppThemeOverlay.Toolbar.Dark">
+    &lt;item name="android:textColorPrimary">@color/white&lt;/item>
+    &lt;item name="android:textColorPrimaryInverse">@color/black&lt;/item>
+&lt;/style>
+                </code></pre>
+
+            </section>
+            <section>
+                <h4>Alert Theme Overlay</h4>
+
+                <pre><code class="xml small-code" data-trim contenteditable>
+&lt;style name="Base.AppThemeOverlay.Dialog.Alert" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+    &lt;item name="android:textColorSecondary">?android:textColorPrimary&lt;/item>
+    &lt;item name="android:textColorSecondaryInverse">?android:textColorPrimaryInverse&lt;/item>
+&lt;/style>
+
+&lt;style name="AppThemeOverlay.Dialog.Alert.Light" parent="Base.AppThemeOverlay.Dialog.Alert">
+    &lt;item name="android:textColorPrimary">@color/black&lt;/item>
+    &lt;item name="android:textColorPrimaryInverse">@color/white&lt;/item>
+    &lt;item name="android:colorBackground">@color/white_light&lt;/item>
+    &lt;item name="android:colorForeground">@color/black_light&lt;/item>
+&lt;/style>
+
+&lt;style name="AppThemeOverlay.Dialog.Alert.Dark" parent="Base.AppThemeOverlay.Dialog.Alert">
+    &lt;item name="android:textColorPrimaryInverse">@color/black&lt;/item>
+    &lt;item name="android:textColorPrimary">@color/white&lt;/item>
+    &lt;item name="android:colorBackground">@color/black_light&lt;/item>
+    &lt;item name="android:colorForeground">@color/white_light&lt;/item>
+&lt;/style>
+                </code></pre>
+            </section>
+            <section>
+                <h4>Theme(in)ception</h4>
+
+                <div>
+                    <span class="fragment" data-fragment-index="1" style="color: orange">LightTheme</span><br>
+                    <span class="fragment" data-fragment-index="2" style="color: orange">ToolbarDarkTheme</span><br>
+                    <span class="fragment" data-fragment-index="3" style="color: orange">ToolbarPopupLightTheme</span><br>
+                </div>
+
+                <img data-src="src/img/inception%20-%20light.png" width="50%">
+            </section>
+            <section>
+                <blockquote>Все равно слишком сложно</blockquote>
+            </section>
+        </section>
+        <section id="ohmy">
+            <section>
+                <h2>Готовое решение</h2>
+                <br>
+                <br>
+                <a href="src/ohmy-res.zip">Набор ресурсов для готовых Light/Dark тем</a>
+            </section>
+            <section>
+                <a href="src/ohmy-res.zip">Набор ресурсов для готовых Light/Dark тем</a>
+
+                <pre><code class="xml" data-trim contenteditable>
+&lt;style name="AppTheme.Light.Green">
+    &lt;item name="colorPrimaryLight">@color/green_light&lt;/item>
+    &lt;item name="colorPrimary">@color/green&lt;/item>
+    &lt;item name="colorPrimaryDark">@color/green_dark&lt;/item>
+    &lt;item name="colorAccent">@color/red_light&lt;/item>
+    &lt;item name="colorControlActivated">@color/red&lt;/item>
+&lt;/style>
+
+&lt;style name="AppTheme.Dark.Green">
+    &lt;item name="colorPrimaryLight">@color/green_light&lt;/item>
+    &lt;item name="colorPrimary">@color/green&lt;/item>
+    &lt;item name="colorPrimaryDark">@color/green_dark&lt;/item>
+    &lt;item name="colorAccent">@color/red_light&lt;/item>
+    &lt;item name="colorControlActivated">@color/red&lt;/item>
+&lt;/style>
+                </code></pre>
+            </section>
+            <section>
+                <a href="src/ohmy-res.zip">Набор ресурсов для готовых Light/Dark тем</a>
+
+                <img data-src="src/img/ad%20-%20light.png" width="25%">
+                <img data-src="src/img/ad%20-%20dark.png" width="25%">
+            </section>
+        </section>
+        <section id="rules">
+            <section><h2></h2></section>
             <section>
                 <h3>Как настроить базовую тему</h3>
                 <ul>

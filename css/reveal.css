@@ -41,6 +41,21 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
   .reveal menu .medium, .reveal nav .medium, .reveal output .medium, .reveal ruby .medium, .reveal section .medium, .reveal summary .medium,
   .reveal time .medium, .reveal mark .medium, .reveal audio .medium, .reveal video .medium {
     font-size: 2rem; }
+  html .medium-code, body .medium-code, .reveal div .medium-code, .reveal span .medium-code, .reveal applet .medium-code, .reveal object .medium-code, .reveal iframe .medium-code,
+  .reveal h1 .medium-code, .reveal h2 .medium-code, .reveal h3 .medium-code, .reveal h4 .medium-code, .reveal h5 .medium-code, .reveal h6 .medium-code, .reveal p .medium-code, .reveal blockquote .medium-code, .reveal pre .medium-code,
+  .reveal a .medium-code, .reveal abbr .medium-code, .reveal acronym .medium-code, .reveal address .medium-code, .reveal big .medium-code, .reveal cite .medium-code, .reveal code .medium-code,
+  .reveal del .medium-code, .reveal dfn .medium-code, .reveal em .medium-code, .reveal img .medium-code, .reveal ins .medium-code, .reveal kbd .medium-code, .reveal q .medium-code, .reveal s .medium-code, .reveal samp .medium-code,
+  .reveal small .medium-code, .reveal strike .medium-code, .reveal strong .medium-code, .reveal sub .medium-code, .reveal sup .medium-code, .reveal tt .medium-code, .reveal var .medium-code,
+  .reveal b .medium-code, .reveal u .medium-code, .reveal center .medium-code,
+  .reveal dl .medium-code, .reveal dt .medium-code, .reveal dd .medium-code, .reveal ol .medium-code, .reveal ul .medium-code, .reveal li .medium-code,
+  .reveal fieldset .medium-code, .reveal form .medium-code, .reveal label .medium-code, .reveal legend .medium-code,
+  .reveal table .medium-code, .reveal caption .medium-code, .reveal tbody .medium-code, .reveal tfoot .medium-code, .reveal thead .medium-code, .reveal tr .medium-code, .reveal th .medium-code, .reveal td .medium-code,
+  .reveal article .medium-code, .reveal aside .medium-code, .reveal canvas .medium-code, .reveal details .medium-code, .reveal embed .medium-code,
+  .reveal figure .medium-code, .reveal figcaption .medium-code, .reveal footer .medium-code, .reveal header .medium-code, .reveal hgroup .medium-code,
+  .reveal menu .medium-code, .reveal nav .medium-code, .reveal output .medium-code, .reveal ruby .medium-code, .reveal section .medium-code, .reveal summary .medium-code,
+  .reveal time .medium-code, .reveal mark .medium-code, .reveal audio .medium-code, .reveal video .medium-code {
+    font-size: 1.25rem;
+    line-height: 1.5rem !important; }
   html .small, body .small, .reveal div .small, .reveal span .small, .reveal applet .small, .reveal object .small, .reveal iframe .small,
   .reveal h1 .small, .reveal h2 .small, .reveal h3 .small, .reveal h4 .small, .reveal h5 .small, .reveal h6 .small, .reveal p .small, .reveal blockquote .small, .reveal pre .small,
   .reveal a .small, .reveal abbr .small, .reveal acronym .small, .reveal address .small, .reveal big .small, .reveal cite .small, .reveal code .small,
@@ -55,6 +70,21 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
   .reveal menu .small, .reveal nav .small, .reveal output .small, .reveal ruby .small, .reveal section .small, .reveal summary .small,
   .reveal time .small, .reveal mark .small, .reveal audio .small, .reveal video .small {
     font-size: 1.5rem; }
+  html .small-code, body .small-code, .reveal div .small-code, .reveal span .small-code, .reveal applet .small-code, .reveal object .small-code, .reveal iframe .small-code,
+  .reveal h1 .small-code, .reveal h2 .small-code, .reveal h3 .small-code, .reveal h4 .small-code, .reveal h5 .small-code, .reveal h6 .small-code, .reveal p .small-code, .reveal blockquote .small-code, .reveal pre .small-code,
+  .reveal a .small-code, .reveal abbr .small-code, .reveal acronym .small-code, .reveal address .small-code, .reveal big .small-code, .reveal cite .small-code, .reveal code .small-code,
+  .reveal del .small-code, .reveal dfn .small-code, .reveal em .small-code, .reveal img .small-code, .reveal ins .small-code, .reveal kbd .small-code, .reveal q .small-code, .reveal s .small-code, .reveal samp .small-code,
+  .reveal small .small-code, .reveal strike .small-code, .reveal strong .small-code, .reveal sub .small-code, .reveal sup .small-code, .reveal tt .small-code, .reveal var .small-code,
+  .reveal b .small-code, .reveal u .small-code, .reveal center .small-code,
+  .reveal dl .small-code, .reveal dt .small-code, .reveal dd .small-code, .reveal ol .small-code, .reveal ul .small-code, .reveal li .small-code,
+  .reveal fieldset .small-code, .reveal form .small-code, .reveal label .small-code, .reveal legend .small-code,
+  .reveal table .small-code, .reveal caption .small-code, .reveal tbody .small-code, .reveal tfoot .small-code, .reveal thead .small-code, .reveal tr .small-code, .reveal th .small-code, .reveal td .small-code,
+  .reveal article .small-code, .reveal aside .small-code, .reveal canvas .small-code, .reveal details .small-code, .reveal embed .small-code,
+  .reveal figure .small-code, .reveal figcaption .small-code, .reveal footer .small-code, .reveal header .small-code, .reveal hgroup .small-code,
+  .reveal menu .small-code, .reveal nav .small-code, .reveal output .small-code, .reveal ruby .small-code, .reveal section .small-code, .reveal summary .small-code,
+  .reveal time .small-code, .reveal mark .small-code, .reveal audio .small-code, .reveal video .small-code {
+    font-size: 1rem;
+    line-height: 1.25rem !important; }
 
 .reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure,
 .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
