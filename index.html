@@ -26,46 +26,16 @@
     <div class="slides">
         <section id="splash">
             <h1 style="color: lawngreen">Stylish Apps</h1>
-            <img data-src="">
         </section>
         <section id="overview">
-            <section><h2>Инструменты</h2></section>
-            <section>
-                <h3>AppCompat Library</h3>
-            </section>
-            <section>
-                <h3>Resources</h3>
-                <ul>
-                    <li>colors.xml</li>
-                    <li>drawables.xml</li>
-                    <li>styles.xml
-                        <span class="fragment" data-fragment-index="1" style="color: whitesmoke;">
-                            / <span style="color: lightgrey;">themes.xml</span>
-                        </span>
-                    </li>
-                    <li>attrs.xml</li>
-                </ul>
-
-                <br><br>
-
-                <dl class="fragment medium" data-fragment-index="2">
-                    <dt>Theme</dt>
-                    <dd class="fragment" data-fragment-index="3">объявление/регистрация атрибутов</dd>
-                    <dt>Style</dt>
-                    <dd class="fragment" data-fragment-index="4">значения атрибутов</dd>
-                    <dt class="fragment" data-fragment-index="5" style="color: yellow">Theme Overlay</dt>
-                    <dd class="fragment" data-fragment-index="6" style="color: lightyellow">Override поднабора атрибутов основной темы</dd>
-                </dl>
-            </section>
-            <section>
-                <h3>Цветовые обозначения</h3>
-                <dl>
-                    <dt style="color: lightskyblue">Название атрибута</dt>
-                    <dt style="color: yellow">Название ресурса</dt>
-                    <dt style="color: orange">Название стиля или темы</dt>
-                    <dt style="color: red">Ключевой вопрос</dt>
-                </dl>
-            </section>
+            <dl>
+                <dt>Theme</dt>
+                <dd class="fragment" data-fragment-index="1">множество общих атрибутов</dd>
+                <dt>Style</dt>
+                <dd class="fragment" data-fragment-index="2">группа специфичных атрибутов</dd>
+                <dt class="fragment" data-fragment-index="3" style="color: yellow">Theme Overlay</dt>
+                <dd class="fragment" data-fragment-index="4" style="color: lightyellow">Переопределение части темы</dd>
+            </dl>
         </section>
         <section id="style">
             <section>
@@ -80,7 +50,7 @@
 <item name="android:borderlessButtonStyle">?style</item>
                 </code></pre>
                 <br>
-                <div>
+                <div class="fragment" data-fragment-index="1">
                     <p>значения по-умолчанию</p>
                     <ul>
                         <li style="color: orange">Widget.AppCompat.Button</li>
@@ -106,13 +76,22 @@
                 </code></pre>
             </section>
             <section>
-                <blockquote>Стили <strong>должны</strong> ссылаться на атрибуты темы</blockquote>
-
-                <br>
-
+                <h1>ссылки</h1>
+                <h3 style="color: orange">?attr/resourceName</h3>
+                <h3 style="color: orange">?android:attr/resourceName</h3>
+            </section>
+            <section>
+                <blockquote>
+                    При написании приложения мы должны всегда использовать ссылки <span style="color: orange">?attr/resource</span>, а не прямые указания <span style="color: lightskyblue">@color/black</span>
+                </blockquote>
+            </section>
+            <section>
+                <blockquote>Стили <strong style="color: red">должны</strong> ссылаться на атрибуты темы</blockquote>
+            </section>
+            <section>
                 <dl>
-                    <dt class="fragment" data-fragment-index="1"><span style="color: red">Q:</span> Как раскрасить кнопку?</dt>
-                    <dd class="fragment" data-fragment-index="2">Изменить атрибут <i><span style="color: lightskyblue">colorButtonNormal</span></i></dd>
+                    <dd style="font-style: oblique"><span style="color: red">Q:</span> Как раскрасить кнопку?</dd>
+                    <dd class="fragment" data-fragment-index="1">A: Изменить атрибут <i><span style="color: lightskyblue">colorButtonNormal</span></i> в теме приложения</dd>
                 </dl>
             </section>
         </section>
@@ -384,30 +363,6 @@
                 <blockquote>Используй ссылки</blockquote>
             </section>
             <section>
-                <h4>Базовые темы</h4>
-                <ul>
-                    <li>Объявляют используемые атрибуты</li>
-                    <li>Наследуются для создания Light/Dark</li>
-                    <li>Связывают атрибуты при помощи ссылок</li>
-                </ul>
-                <h4>Финальные темы</h4>
-                <ul>
-                    <li>Объявляют конечные цвета, без которых базовая тема не работает</li>
-                </ul>
-            </section>
-            <section>
-            </section>
-            <section>
-
-            </section>
-            <section>
-                <h3>Как создавать разные темы</h3>
-                <ul>
-                    <li>Базовую тема <span>(с кастомными атрибутами)</span></li>
-                    <li>Специфичные темы (переопределить ключевое)</li>
-                </ul>
-            </section>
-            <section>
                 <h3>Как создавать стили</h3>
                 <ul>
                     <li>Не смешивать стиль и верстку</li>
@@ -416,10 +371,13 @@
             </section>
         </section>
         <section id="links">
-            <a href="src/ohmy-res.zip">Набор ресурсов для готовых Light/Dark тем</a>
-            <a href="src/app-ohmy-theme-debug.apk">Example.apk</a>
-            <a href="https://github.com/avaytsekhovskiy/ohmy-theme">Example Source Code</a>
-            <p>Когда-нибудь опубилкуем в виде библиотеки</p>
+            <h2>Потыкать самому</h2>
+            <ul>
+                <li><a href="src/ohmy-res.zip">/src/res</a></li>
+                <li><a href="src/app-ohmy-theme-debug.apk">example.apk</a></li>
+                <li><a href="https://github.com/avaytsekhovskiy/ohmy-theme">Github Source Code</a></li>
+                <li><p>Когда-нибудь опубилкую в виде библиотеки</p></li>
+            </ul>
         </section>
     </div>
 </div>
