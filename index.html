@@ -80,25 +80,6 @@
 <item name="android:borderlessButtonStyle">?style</item>
                 </code></pre>
                 <br>
-                <p  class="fragment" data-fragment-index="1">Все определяется в стиле</p>
-                <pre class="fragment" data-fragment-index="1"><code class="xml" data-trim contenteditable>
-                    &lt;item name="background"&gt;@drawable/btn_default_material&lt;/item&gt;
-                    &lt;item name="textAppearance"&gt;?attr/textAppearanceButton&lt;/item&gt;
-                    &lt;item name="minHeight"&gt;48dip&lt;/item&gt;
-                    &lt;item name="minWidth"&gt;88dip&lt;/item&gt;
-                    &lt;item name="stateListAnimator"&gt;@anim/button_state_list_anim_material&lt;/item&gt;
-                    &lt;item name="focusable"&gt;true&lt;/item&gt;
-                    &lt;item name="clickable"&gt;true&lt;/item&gt;
-                    &lt;item name="gravity"&gt;center_vertical|center_horizontal&lt;/item&gt;
-                </code></pre>
-            </section>
-            <section>
-                <h3>Параметры темы</h3>
-                <pre><code class="xml" data-trim contenteditable>
-<item name="android:buttonStyle">?style</item>
-<item name="android:borderlessButtonStyle">?style</item>
-                </code></pre>
-                <br>
                 <div>
                     <p>значения по-умолчанию</p>
                     <ul>
@@ -108,23 +89,11 @@
                 </div>
             </section>
             <section>
-                <h3>Параметры темы</h3>
-                <br>
-                <pre><code class="xml" data-trim contenteditable>
-                        <item name="colorButtonNormal">?color_selector</item>
-                </code></pre>
-            </section>
-            <section>
-                <h3>Параметры темы</h3>
-                <span style="color: darkgrey">(deep inside)</span>
-
-                <br>
-                <br>
-
-                <span style="color: orange">Widget.AppCompat.Button</span><span class="fragment" data-fragment-index="1"> &darr;</span><br>
-                <span class="fragment" data-fragment-index="1" style="color: orange">Base.Widget.AppCompat.Button</span><span class="fragment" data-fragment-index="2"> &darr;</span><br>
-                <span class="fragment" data-fragment-index="2" style="color: orange">Widget.Material.Button</span><span class="fragment" data-fragment-index="3"> &darr;</span><br>
-                <span class="fragment" data-fragment-index="3"><span style="color: lightskyblue">background</span>: <span style="color:yellow">@drawable/btn_default_material</span><span class="fragment" data-fragment-index="4"> &darr;</span></span>
+                <h3><span style="color: orange">Widget.AppCompat.Button</span></h3>
+                <span class="fragment" data-fragment-index="1">&darr;</span><br>
+                <span class="fragment" data-fragment-index="1" style="color: orange">Base.Widget.AppCompat.Button</span><span class="fragment" data-fragment-index="2"><br>&darr;</span><br>
+                <span class="fragment" data-fragment-index="2" style="color: orange">Widget.Material.Button</span><span class="fragment" data-fragment-index="3"><br>&darr;</span><br>
+                <span class="fragment" data-fragment-index="3"><span style="color: lightskyblue">background</span>: <span style="color:yellow">@drawable/btn_default_material</span></span>
                 <pre class="fragment" data-fragment-index="4"><code class="xml" data-trim contenteditable>
 &lt;ripple android:color="?attr/colorControlHighlight"&gt;
   &lt;item&gt;
@@ -241,7 +210,6 @@
                 <br>
                 <div class="fragment" data-fragment-index="2">
                     <p class="medium">редкие</p>
-                    <br>
                     <dl class="medium">
                         <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>textColorHighlight</dt>
                         <dd class="fragment" data-fragment-index="3"><span style="background: darkorange">фон выделенного текста</span></dd>
