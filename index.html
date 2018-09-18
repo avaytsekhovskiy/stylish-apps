@@ -30,21 +30,32 @@
         <section id="overview">
             <dl>
                 <dt>Theme</dt>
-                <dd class="fragment" data-fragment-index="1">множество общих атрибутов</dd>
+                <dd class="fragment" data-fragment-index="1">Глобальное множество атрибутов</dd>
                 <dt>Style</dt>
-                <dd class="fragment" data-fragment-index="2">группа специфичных атрибутов</dd>
+                <dd class="fragment" data-fragment-index="2">Локальная группа атрибутов</dd>
                 <dt class="fragment" data-fragment-index="3" style="color: yellow">Theme Overlay</dt>
-                <dd class="fragment" data-fragment-index="4" style="color: lightyellow">Переопределение части темы</dd>
+                <dd class="fragment" data-fragment-index="4" style="color: lightyellow">"фильтр", переопределяющий часть темы</dd>
             </dl>
         </section>
         <section id="style">
+            <section><h2>Styles</h2></section>
             <section>
-                <h2>Styles</h2>
-                <img data-src="src/img/buttons%20-%20default.png" width="50%" class="fragment" data-fragment-index="1">
-                <p class="fragment" data-fragment-index="2"><span style="color: red">Q:</span> Как раскрасить кнопку?</p>
+                <h3>Styles</h3>
+                <p>Позволяет определить внешний вид View</p>
+                <pre><code class="xml">&lt;TextView style="@style/header"/></code></pre>
+                <pre><code class="xml">&lt;TextView style="@style/regular"/></code></pre>
+                <p class="fragment" data-fragment-index="1">И избежать дублирование кода</p>
             </section>
             <section>
-                <h3>Параметры темы</h3>
+                <blockquote>Выносите стили!</blockquote>
+                <img src="src/img/extract%20style.gif">
+            </section>
+            <section>
+                <p><span style="color: red">Q:</span> Как раскрасить кнопку?</p>
+                <img src="src/img/buttons%20-%20default.png" width="50%">
+            </section>
+            <section>
+                <h3>Параметры AppCompat</h3>
                 <pre><code class="xml" data-trim contenteditable>
 <item name="android:buttonStyle">?style</item>
 <item name="android:borderlessButtonStyle">?style</item>
@@ -76,6 +87,30 @@
                 </code></pre>
             </section>
             <section>
+                <h3>Стили можно наследовать</h3>
+            </section>
+            <section>
+                <h3>Style heritage</h3>
+                <pre><code class="xml" data-trim contenteditable>
+&lt;style name="Implicit">
+    &lt;item name="android:textSize">60dp&lt;/item>
+&lt;/style>
+&lt;style name="Explicit">
+    &lt;item name="android:textColor">@color/red&lt;/item>
+&lt;/style>
+
+&lt;style name="Implicit.LargeTransparent">
+    &lt;item name="android:alpha">0.5&lt;/item>
+&lt;/style>
+&lt;style name="Implicit.LargeTransparentRed" parent="Explicit">
+    &lt;item name="android:alpha">0.5&lt;/item>
+&lt;/style>
+                </code></pre>
+                <p class="fragment" data-fragment-index="1" style="opacity: 0.5">LargeTransparent</p>
+                <p class="fragment" data-fragment-index="1"><span style="color: red; opacity: 0.5" class="fragment fade-out" data-fragment-index="2">LargeTransparentRed</span> <span class="fragment" data-fragment-index="2"></span></p>
+                <p class="fragment" data-fragment-index="2" style="color: red; opacity: 0.5; font-size: 1rem">TransparentRed</p>
+            </section>
+            <section>
                 <h1>ссылки</h1>
                 <h3 style="color: orange">?attr/resourceName</h3>
                 <h3 style="color: orange">?android:attr/resourceName</h3>
@@ -86,7 +121,7 @@
                 </blockquote>
             </section>
             <section>
-                <blockquote>Стили <strong style="color: red">должны</strong> ссылаться на атрибуты темы</blockquote>
+                <blockquote>Стили, селекторы и другие drawable <strong style="color: red">должны</strong> ссылаться на атрибуты темы</blockquote>
             </section>
             <section>
                 <dl>
@@ -96,9 +131,9 @@
             </section>
         </section>
         <section id="theme">
-            <section><h2>Theme</h2></section>
+            <section><h2>AppCompat</h2></section>
             <section>
-                <h3>Основные атрибуты</h3>
+                <h4>Основные атрибуты - фон</h4>
                 <dl class="medium">
                     <dt style="color: lightskyblue"><span style="color: lightgrey;">android:</span>windowLightStatusBar</dt>
                     <dd class="fragment" data-fragment-index="1">Цвет иконок (светлый/темный)</dd>
@@ -111,52 +146,8 @@
                 </dl>
             </section>
             <section>
-                <h3>Основные атрибуты</h3>
-                <img width="50%" data-src="src/img/background.png">
-            </section>
-            <section>
-                <h4>Основные атрибуты - цвета</h4>
-                <dl class="medium">
-                    <dt style="color: lightskyblue">colorPrimary</dt>
-                    <dd class="fragment" data-fragment-index="1">Цвет заголовков</dd>
-                    <dt style="color: lightskyblue">colorPrimaryDark</dt>
-                    <dd class="fragment" data-fragment-index="1">Фон status bar</dd>
-                    <dt style="color: lightskyblue">colorAccent</dt>
-                    <dd  class="fragment" data-fragment-index="2">Цвет интерактивных элементов<span style="color: red">*</span></dd>
-                </dl>
-                <br>
-                <div class="fragment" data-fragment-index="3">
-                    <p class="medium">*Зависимые по-умолчанию от <span style="color: lightskyblue">colorAccent</span></p>
-                    <dl class="medium">
-                        <dt style="color: lightskyblue">colorControlNormal</dt>
-                        <dd class="fragment" data-fragment-index="4">Off</dd>
-                        <dt style="color: lightskyblue">colorControlActivated</dt>
-                        <dd class="fragment" data-fragment-index="4">On</dd>
-                        <dt style="color: lightskyblue">colorControlHighlight</dt>
-                        <dd class="fragment" data-fragment-index="5">Подсветка при нажатии <span style="color: red">(ripple!)</span></dd>
-                    </dl>
-                </div>
-            </section>
-            <section>
-                <h4><span style="color: orange">colorAccent</span></h4>
-                <span class="fragment fade-out" data-fragment-index="1"><span style="color: grey">N</span>, <span style="color: grey">A</span>, <span style="color: grey">H</span></span>
-                <span style="display: inline-block; width: 10rem"></span>
-                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
-                <span style="display: inline-block; width: 10rem"></span>
-                <span class="fragment fade-out" data-fragment-index="1"><span style="color: orange">N</span>, <span style="color: darkorange">A</span>, <span style="color: darkorange">H</span></span>
-                <br>
-                <video class="fragment fade-out" data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20plain.mp4" type="video/mp4"/></video>
-                <video controls><source data-src="src/img/overlay%20-%20regular.mp4" type="video/mp4"/></video>
-                <video class="fragment fade-out" data-fragment-index="1"  controls><source data-src="src/img/overlay%20-%20colorful.mp4" type="video/mp4"/></video>
-            </section>
-            <section>
-                <h4><span style="color: orange">colorAccent - проблемы</span></h4>
-                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
-                <br>
-                <br>
-                <video data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20regular%20(problems).mp4" type="video/mp4"/></video>
-                <span style="display: inline-block; width: 10rem"></span>
-                <video data-fragment-index="1" controls><source data-src="src/img/overlay%20-%20colorful%20(problems).mp4" type="video/mp4"/></video>
+                <h4>Основные атрибуты - фон</h4>
+                <img width="50%" src="src/img/background.png">
             </section>
             <section>
                 <h4>Основные атрибуты - текст</h4>
@@ -203,17 +194,59 @@
                     <dt style="color: lightskyblue"><span style="color: lightgrey">android:</span>disabledAlpha</dt>
                     <dd class="fragment" data-fragment-index="1">[0; 1] прозрачность</dd>
                 </dl>
-                <p class="fragment medium" data-fragment-index="2"><span style="color: red">Q:</span> Безопасно ли делать элементы прозрачными?</p>
-                <p class="fragment medium" data-fragment-index="3">Нет! Лучше явно определить цвет в селекторе элемента</p>
-
+            </section>
+            <section>
+                <h4>Основные атрибуты - цвета</h4>
+                <dl class="medium">
+                    <dt style="color: lightskyblue">colorPrimary</dt>
+                    <dd class="fragment" data-fragment-index="1">Цвет заголовков</dd>
+                    <dt style="color: lightskyblue">colorPrimaryDark</dt>
+                    <dd class="fragment" data-fragment-index="1">Фон status bar</dd>
+                    <dt style="color: lightskyblue">colorAccent</dt>
+                    <dd  class="fragment" data-fragment-index="2">Цвет интерактивных элементов<span style="color: red">*</span></dd>
+                </dl>
+            </section>
+            <section>
+                <h2 style="color: lightskyblue">colorAccent</h2>
+                <div>
+                    <p class="medium fragment" data-fragment-index="1">Зависимые по-умолчанию от <span style="color: lightskyblue">colorAccent</span></p>
+                    <dl class="medium fragment" data-fragment-index="1">
+                        <dt style="color: lightskyblue">colorControl<span class="fragment highlight-green" data-fragment-index="4">N</span>ormal</dt>
+                        <dd class="fragment" data-fragment-index="2">Off</dd>
+                        <dt style="color: lightskyblue">colorControl<span class="fragment highlight-green" data-fragment-index="4">A</span>ctivated</dt>
+                        <dd class="fragment" data-fragment-index="2">On</dd>
+                        <dt style="color: lightskyblue">colorControl<span class="fragment highlight-green" data-fragment-index="4">H</span>ighlight</dt>
+                        <dd class="fragment" data-fragment-index="3">Подсветка при нажатии <span style="color: red">(ripple!)</span></dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <h4><span style="color: orange">colorAccent</span></h4>
+                <span class="fragment fade-out" data-fragment-index="1"><span style="color: grey">N</span>, <span style="color: grey">A</span>, <span style="color: grey">H</span></span>
+                <span style="display: inline-block; width: 10rem"></span>
+                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
+                <span style="display: inline-block; width: 10rem"></span>
+                <span class="fragment fade-out" data-fragment-index="1"><span style="color: orange">N</span>, <span style="color: darkorange">A</span>, <span style="color: darkorange">H</span></span>
                 <br>
+                <img src="src/img/overlay%20-%20plain.gif" class="fragment fade-out" data-fragment-index="1" />
+                <img src="src/img/overlay%20-%20regular.gif" />
+                <img src="src/img/overlay%20-%20colorful.gif" class="fragment fade-out" data-fragment-index="1"  />
+            </section>
+            <section>
+                <h4><span style="color: orange">colorAccent</span> - проблемы</h4>
+                <span style="color: grey">N</span>, <span style="color: darkorange">A</span>, <span style="color: grey">H</span>
                 <br>
-
-                <blockquote class="fragment" data-fragment-index="4">Расширение темы своими атрибутами позволит сделать ее более гибкой!</blockquote>
+                <img src="src/img/overlay%20-%20regular%20(problems).gif" data-fragment-index="1" />
+                <span style="display: inline-block; width: 10rem"></span>
+                <img src="src/img/overlay%20-%20colorful%20(problems).gif" data-fragment-index="1" />
             </section>
         </section>
         <section id="custom">
             <section><h2>Advanced техники</h2></section>
+            <section>
+                <h3>Theme Overlay</h3>
+
+            </section>
             <section>
                 <h4>Кастомные атрибуты</h4>
 
@@ -306,7 +339,7 @@
                     <span class="fragment" data-fragment-index="3" style="color: orange">ToolbarPopupLightTheme</span><br>
                 </div>
 
-                <img data-src="src/img/inception%20-%20light.png" width="50%">
+                <img src="src/img/inception%20-%20light.png" width="50%">
             </section>
             <section>
                 <blockquote>Все равно слишком сложно</blockquote>
@@ -343,8 +376,8 @@
             <section>
                 <a href="src/ohmy-res.zip">Набор ресурсов для готовых Light/Dark тем</a>
 
-                <img data-src="src/img/ad%20-%20light.png" width="25%">
-                <img data-src="src/img/ad%20-%20dark.png" width="25%">
+                <img src="src/img/ad%20-%20light.png" width="25%">
+                <img src="src/img/ad%20-%20dark.png" width="25%">
             </section>
         </section>
         <section id="rules">
