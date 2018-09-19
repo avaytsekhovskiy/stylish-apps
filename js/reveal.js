@@ -4787,14 +4787,14 @@
 
 			switch( event.keyCode ) {
 				// p, page up
-				case 80: case 33: navigatePrev(); break;
-				// n, page down
-				case 78: case 34: navigateNext(); break;
-				// h, left
-				case 72: case 37: navigateLeft(); break;
-				// l, right
-				case 76: case 39: navigateRight(); break;
-				// k, up
+				case 80: case 33: case 37: navigatePrev(); break;
+				// n, page down, left
+				case 78: case 34: case 39: navigateNext(); break;
+				// h, left, right
+				case 72: navigateLeft(); break;
+				// l
+				case 76: navigateRight(); break;
+				// k
 				case 75: case 38: navigateUp(); break;
 				// j, down
 				case 74: case 40: navigateDown(); break;
